@@ -27,6 +27,7 @@ gem 'better_errors'
 gem 'pry'
 gem 'colorize'
 gem 'slim'
+gem 'materialize-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

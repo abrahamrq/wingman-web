@@ -1,18 +1,16 @@
-= simple_form_for @user, url: create_user_path do |u|
-	.col-lg-6
-		= u.input :first_name, placeholder: "First Name"
-	.col-lg-6
-		= u.input :last_name, placeholder: "Last Name"
-	.col-lg-6
-		= u.input :nickname, placeholder: "Nickname (optional)"
-	.col-lg-6
-		= u.input :gender, placeholder: "Gender (optional)"
-	.col-lg-6
-		= u.input :email, placeholder: "E-mail"
-	.col-lg-6
-		= u.input :password, type: 'password', placeholder: "Password"
-	.col-lg-6
-		= u.association :interests
+= simple_form_for @user, url: update_user_path do |u|
+	/ .col-lg-6
+	/ 	= u.input :first_name, placeholder: "First Name"
+	/ .col-lg-6
+	/ 	= u.input :last_name, placeholder: "Last Name"
+	/ .col-lg-6
+	/ 	= u.input :nickname, placeholder: "Nickname (optional)"
+	/ .col-lg-6
+	/ 	= u.input :gender, placeholder: "Gender (optional)"
+	/ .col-lg-6
+	/ 	= u.input :email, placeholder: "E-mail"
+	/ .col-lg-6
+	/ 	= u.input :password, type: 'password', placeholder: "Password"
 	.col-lg-12
 		#accordion aria-multiselectable="true" role="tablist"  
 	    - Category.all.each_with_index do |c, index|
@@ -22,7 +20,7 @@
 			        a aria-controls="collapse-#{index}" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse-#{index}" 
 			          = c.name
 			    .panel-collapse.collapse aria-labelledby="heading-#{index}" id="collapse-#{index}" role="tabpanel"
-	  				= u.association :interests, collection: Interest.all.where(category_id: c.id).map{ |i| i.description }, as: :check_boxes, label: ''
+	  				= u.association :interests, collection: Interest.all.where(category_id: c.id), as: :check_boxes, label_method: :description
 	.col-lg-12
 		= link_to 'Favorites', favorites_path, class: 'btn btn-primary'
 	.col-lg-6.col-lg-offset-6

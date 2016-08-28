@@ -24,6 +24,7 @@ gem 'materialize-sass'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'country_select'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'

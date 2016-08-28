@@ -3,13 +3,17 @@
     .col-md-2.col-md-offset-5.col-sm-4.col-sm-offset-1.col-xs-4
       = image_tag suggestion[:icon], class: 'img-responsive img-circle img-dateplan z-depth-1'
     .col-md-5.col-xs-6.dateplan-text
-      .row
+      .row.date-row
         .col-xs-12
           = suggestion[:name]
-        .col-xs-5
-          = suggestion[:address] 
-        .col-xs-5
+      .row.date-row
+        .col-xs-12
+          = "Address: #{suggestion[:address]}" 
+      .row.date-row
+        .col-xs-4
           = "Distance: #{suggestion[:distance]}m"
+        .col-xs-8
+          = "Type: #{suggestion[:categories]}"
     - if index < @suggestions.size - 1
       .row.date-row
         .col-md-1.col-md-offset-6.col-xs-offset-2.col-sm-offset-2.line-dateplan

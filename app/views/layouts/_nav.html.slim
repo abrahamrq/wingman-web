@@ -1,17 +1,20 @@
 nav.navbar.navbar-default
   .container-fluid
-    /! Brand and toggle get grouped for better mobile display
     .navbar-header
       button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'W', root_path,class: "navbar-brand"
-    /! Collect the nav links, forms, and other content for toggling
+      a.navbar-brand href="#" W
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
       ul.nav.navbar-nav.navbar-right
-        li.active
-          a data-toggle="modal" data-target="#myModal" 
+        li
+        - if !current_user
+          a href="#" data-toggle="modal" data-target="#myModal" 
             | Login
-            span.sr-only (current)
+        - if current_user
+          = link_to destroy_session_path, id:'logout-btn'
+            | Logout 
+              

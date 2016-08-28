@@ -1,4 +1,4 @@
-= simple_form_for User.new, url: create_user_path do |u|
+= simple_form_for @user, url: create_user_path do |u|
 	.col-lg-6
 		= u.input :first_name, placeholder: "First Name" 
 	.col-lg-6
@@ -11,13 +11,9 @@
 		= u.input :email, placeholder: "E-mail"
 	.col-lg-6
 		= u.input :password, type: 'password', placeholder: "Password"
-	.col-lg-6
-		= u.association :interests
+	#interest-list.col-lg-6
+		= u.association :interests, collection: Interest.all.map{ |i| i.description },as: :check_boxes
 	.col-lg-3.col-lg-offset-9
 		= u.submit class: 'btn' 
 			|Update
 			i.fa.fa-check
-		'
-		.btn.btn-danger
-			= link_to root_path
-				i.fa.fa-close

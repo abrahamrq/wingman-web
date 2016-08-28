@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   post '/user/new', to: 'user#create', as: :create_user
   get '/user/show', to: 'user#show', as: :show_user
   patch 'user/update', to: 'user#update', as: :update_user
+  get 'user/favorites', to: 'user#favorites', as: :favorites
   
   #DatePlans routes
   get '/dateplan', to: 'dateplan#show', as: :dateplan
+
+  resources :dateplan
 end

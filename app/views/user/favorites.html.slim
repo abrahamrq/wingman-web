@@ -1,0 +1,13 @@
+.container.light-grey-background#favorites-container
+	.row.favorites-title.white-background.z-depth-1
+		.col-md-12
+			|Favorites
+	- @favorites.each_with_index do |f, index|
+		.row.favorites-row.white-background.z-depth-1
+			.col-md-10.col-md-offset-1
+			 - f.places.each do |t|
+			 	.col-md-2.favorites-element
+			 		= t.name
+			 - if index < @favorites.places.length - 1
+			 	i.fa.fa-toggle-right
+

@@ -11,3 +11,13 @@ class @Suggestion
           success: (response) ->
           error: (response) ->
       )
+
+    $(document).on 'click', '#save-suggestion', (e) ->
+      places = $("#save-suggestion").attr('places')
+      $.ajax
+        url: '/dateplan'
+        type: 'POST'
+        data: { places: places }
+        success: (response) ->
+          alert("saved!")
+        error: (response) ->

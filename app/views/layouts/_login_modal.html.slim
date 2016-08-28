@@ -15,3 +15,5 @@ div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby=
                 = f.input :password, placeholder: 'Password', label: false 
         div class="modal-footer"
           = f.submit class: "btn btn-md btn-primary", value: 'Login'
+          '
+          = link_to 'Sign up', new_user_path, class: 'btn btn-md btn-primary pull-left'

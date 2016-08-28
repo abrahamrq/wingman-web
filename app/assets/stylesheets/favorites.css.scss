@@ -1,17 +1,22 @@
 #favorites-container {
-	min-height: 75vh;
-	border-radius: 6px;
-	margin-bottom: 29px;
-	padding: 25px;
+  min-height: 75vh;
+  border-radius: 6px;
+  margin-bottom: 29px;
+  padding: 25px;
 }
 
 .favorites-title {
-	border-radius: 6px;	
-	padding: 25px;
+  border-radius: 6px; 
+  padding: 25px;
 }
 
 .favorites-row {
-	border-radius: 6px;
-	padding: 25px;
+  border-radius: 6px;
+  padding: 25px;
+}
+
+.favorites-name {
+  padding: 25px;
+  font: white;
 }
 

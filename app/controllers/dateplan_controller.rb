@@ -3,7 +3,6 @@ class DateplanController < ApplicationController
   end
 
   def create
-    binding.pry
     places = JSON.parse(params[:places])
     if Dateplan.create(user_id: current_user.id, places: places, title: "plan")
       render json: {}, status: 200

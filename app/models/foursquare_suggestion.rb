@@ -1,5 +1,6 @@
 class FoursquareSuggestion
   def self.get_venues(location, radius, limit, user = nil)
+    categories = set_categories(user)
     suggestions = foursquare_client.search_venues(ll: location,
                                                   limit: 100,
                                                   radius: radius,
@@ -9,6 +10,10 @@ class FoursquareSuggestion
   end
 
   private
+
+  def self.set_categories(user)
+    return user.interests if user 
+  end
 
   def self.filter_suggestion(suggestions, limit)
     suggestions.delete_if do |suggestion|

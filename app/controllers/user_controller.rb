@@ -8,7 +8,6 @@ class UserController < ApplicationController
     if @user.save
       flash[:succes] = 'You have registered successfuly'
       login_with_new_user
-      binding.pry
       redirect_to show_user_path
     else
       flash[:error] = 'An error occurred. Please try again.'

@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   def wrong_login
     flash[:error] = 'Wrong email, username or password, try again'
-    redirect_to new_login_path
+    redirect_to root_path
   end
 
   def user

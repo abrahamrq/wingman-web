@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'application#index'
 
   # Session routes
-  post 'login', to: 'sessions#create', as: :login_action
+  post 'login', to: 'sessions#create', as: :login
   get 'logout', to: 'sessions#destroy', as: :destroy_session
 
   # Foursquare routes

@@ -5,6 +5,7 @@ class UberTrip
 
   def estimations(points)
     points.each_with_index do |point, index|
+      break if points.count < 2
       next if index < 1
 
       origin = points[index - 1]

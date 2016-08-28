@@ -4,16 +4,16 @@ class UserController < ApplicationController
 	end
 
 	def create
-    user = User.new user_params
-    if user.save
+    @user = User.new user_params
+    if @user.save
       flash[:succes] = 'You have registered successfuly'
       login_with_new_user
-      redirect_to user_show_path
+      binding.pry
+      redirect_to show_user_path
     else
       flash[:error] = 'An error occurred. Please try again.'
       render :new
     end
-    redirect_to show_user_path
 	end
 
 	def show
@@ -23,8 +23,9 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit( :first_name, :last_name, :nickname, 
-      :gender, :email, :password )
+    params.require(:user).permit(
+      :first_name, :last_name, :nickname, :gender, :email, :password
+      )
   end
 
   def login_with_new_user

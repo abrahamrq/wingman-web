@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- 
+
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "materialize";
@@ -36,4 +37,18 @@ header {
     height: 100%;
     text-align: center;
     color: #fff;
+}
+
+.orange-background { background-color: #FF912E; }
+.orange-font { color: #FF912E; }
+.white-background { background-color: white; }
+.white-font { color: white; }
+.light-grey-background { background-color: #f8f8f8; }
+.light-grey-font { color: #f8f8f8; }
+.dark-grey-background { background-color: #404040; }
+.dark-grey-font { color: #404040; }
+
+section {
+	padding-top: 25px;
+	padding-bottom: 25px;
 }

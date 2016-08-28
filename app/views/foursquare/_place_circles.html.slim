@@ -2,8 +2,9 @@
   - @suggestions.each_with_index do |suggestion, index|
     .col-md-2.col-md-offset-5.col-sm-4.col-sm-offset-1.col-xs-4
       img.img-responsive.img-circle.img-dateplan.z-depth-1 src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png"
-    .col-md-5.col-xs-5.dateplan-text
-      = suggestion[:name]
+    .col-md-5.col-xs-6.dateplan-text
+    	h4
+      	= suggestion[:name]
     - if index < @suggestions.size - 1
       .row.date-row
         .col-md-1.col-md-offset-6.col-xs-offset-2.col-sm-offset-2.line-dateplan

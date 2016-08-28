@@ -14,10 +14,9 @@ nav.navbar.navbar-default
             = link_to 'Make Plans', dateplan_path, class: 'dark-grey-font'
           li
             = link_to 'Interests', show_user_path, class: 'dark-grey-font'
+          li  
+            = link_to 'Logout', destroy_session_path, id:'logout-btn', class: 'orange-font'
         li
         - if !current_user
           a.gray-font href="#" data-toggle="modal" data-target="#myModal" 
             | Login
-        - if current_user
-          = link_to destroy_session_path, id:'logout-btn', class: 'orange-font'
-            | Logout

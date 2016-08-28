@@ -3,7 +3,7 @@ class FoursquareSuggestion
     categories = set_categories(user)
     suggestions = foursquare_search(location, radius, categories)
     suggestions = filter_suggestion(suggestions, limit)
-    parse_suggestions(suggestions)
+    UberTrip.new.estimations(parse_suggestions(suggestions))
   end
 
   private

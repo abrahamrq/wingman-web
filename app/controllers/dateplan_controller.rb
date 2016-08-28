@@ -1,4 +1,4 @@
-class DatePlanController < ApplicationController
+class DateplanController < ApplicationController
 	def show
 	end
 end

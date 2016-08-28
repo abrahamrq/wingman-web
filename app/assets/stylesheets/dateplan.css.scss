@@ -1,0 +1,46 @@
+#dateplan-container {
+/*	border: 1px solid transparent;
+	border-radius: 6px;
+	margin-top: 3px;
+	padding: 20px; */
+	min-height: 79vh;
+}
+
+.dateplan-element {
+	padding: 15px;
+	border-radius: 6px;
+}
+
+.arrow-mid {
+	font-size: 32pt;
+}
+
+.img-dateplan {
+	height: 150px;
+	width: 150px;
+	display: inline !important;
+	border: 2px solid white;
+}
+
+.dateplan-title {
+	display: inline;
+	vertical-align: middle;
+	margin-left: 15px;
+}
+
+.line-dateplan {
+	border-left: 1px solid white;
+	height: 55px;
+}
+
+.date-row {
+	margin-bottom: 0px !important;
+}
+
+.date-row div {
+	padding: 0;
+}
+
+.dateplan-text {
+	margin-top: 50px;
+}

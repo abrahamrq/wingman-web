@@ -23,6 +23,11 @@
   .panel-collapse {
     padding: 15px;
   }
+
+  .interest-span {
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
 }
 
 #user-content {
@@ -37,5 +42,19 @@
   .profile-img {
     width: 150px;
     height: 150px;
+  }
+
+  [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    opacity: 1 !important;
+    left: 0 !important;
+  }
+
+  .checkbox {
+    padding-left: 25px;
+
+    input {
+      margin-left: 5px !important;
+      margin-top: -1px !important;
+    }
   }
 }

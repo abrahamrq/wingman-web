@@ -1,4 +1,4 @@
-= simple_form_for User.new, url: create_user_path do |u|
+= simple_form_for User.new, url: update_user_path do |u|
 	.col-lg-6
 		= u.input :first_name, placeholder: "First Name" 
 	.col-lg-6
@@ -13,8 +13,19 @@
 		= u.input :password, type: 'password', placeholder: "Password"
 	.col-lg-6
 		= u.association :interests
-	.col-lg-3.col-lg-offset-9
-		= u.submit class: 'btn' 
+	.col-lg-12
+		#accordion aria-multiselectable="true" role="tablist"  
+	    - Category.all.each_with_index do |c, index|
+	    	.panel.white-background
+			    .panel-heading role="tab" id="heading-#{index}" 
+			      h5.panel-title style="color: #9e9e9e !important"
+			        a aria-controls="collapse-#{index}" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse-#{index}" 
+			          = c.name
+			    .panel-collapse.collapse aria-labelledby="heading-#{index}" id="collapse-#{index}" role="tabpanel"
+	  				= u.association :interests, collection: Interest.all.where(category_id: c.id).map{ |i| i.description }, as: :check_boxes, label: ''
+
+	.col-lg-6.col-lg-offset-6
+		= u.submit 'Update', class: 'btn' 
 			|Update
 			i.fa.fa-check
 		'

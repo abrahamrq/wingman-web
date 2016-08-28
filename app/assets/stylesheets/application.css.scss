@@ -14,5 +14,45 @@
  *= require_self
  */
 
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "materialize";
 @import "materialize/extras/nouislider";
+@font-face { font-family: AkaDora; src: url('fonts/akaDora.otf'); }
+@font-face { font-family: AkaDora; src: url('fonts/akaDora.ttf'); } 
+@font-face { font-family: Alisandra; src: url('fonts/alisandra.ttf'); } 
+
+
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #FF912E !important;
+    height:100%;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.orange-background { background-color: #FF912E; }
+.orange-font { color: #FF912E; }
+.white-background { background-color: white; }
+.white-font { color: white; }
+.light-grey-background { background-color: #f8f8f8; }
+.light-grey-font { color: #f8f8f8; }
+.dark-grey-background { background-color: #9e9e9e; }
+.dark-grey-font { color: #9e9e9e; }
+
+section {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.btn-danger {
+    background-color: #d9534f !important;
+}

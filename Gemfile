@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'pg'
+# Use SCSS for stylesheets
+gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -21,6 +23,9 @@ gem 'pry'
 gem 'colorize'
 gem 'slim'
 gem 'materialize-sass'
+gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug'

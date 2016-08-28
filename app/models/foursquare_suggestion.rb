@@ -1,10 +1,11 @@
 class FoursquareSuggestion
   def self.get_venues(location, radius, limit, user = nil)
     categories = set_categories(user)
-    suggestions = foursquare_search(location, radius, categories)
+    location_string = "#{location[0]},#{location[1]}"
+    suggestions = foursquare_search(location_string, radius, categories)
     suggestions = filter_suggestion(suggestions, limit)
     ordered_suggestions = parse_suggestions(suggestions).sort_by { |sug| sug[:distance] }
-    UberTrip.new.estimations(ordered_suggestions)
+    UberTrip.new.estimations(ordered_suggestions, location)
   end
 
   private
@@ -15,7 +16,7 @@ class FoursquareSuggestion
   end
 
   def self.filter_suggestion(suggestions, limit)
-    categories = ["Department Store"]
+    categories = ["Department Store", "Supermarket", "Bank"]
     filtered_suggestions = []
     suggestions.shuffle.each do |suggestion|
       category = parse_categories(suggestion)
@@ -39,12 +40,6 @@ class FoursquareSuggestion
 
   def self.parse_categories(suggestion)
     suggestion["categories"].map {|c| c["name"]}.join(',')
-  end
-
-  def self.foursquare_client
-    @foursquare_client ||= Foursquare2::Client.new(client_id: ENV['FS_CLIENT_ID'],
-                                                   client_secret: ENV['FS_CLIENT_SECRET'],
-                                                   api_version: ENV['FS_API_VERSION'])
   end
 
   def self.foursquare_search(location, radius, categories)

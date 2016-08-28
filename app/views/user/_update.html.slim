@@ -19,8 +19,6 @@
 			      h5.panel-title style="color: #9e9e9e !important"
 			        a aria-controls="collapse-#{index}" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse-#{index}" 
 			          = c.name
-			          a.select-all href="#" style="text-decoration: none;"
-			          	|	 | Select all
 			    .panel-collapse.collapse aria-labelledby="heading-#{index}" id="collapse-#{index}" role="tabpanel"
 	  				= u.association :interests, collection: Interest.all.where(category_id: c.id), as: :check_boxes, label_method: :description
 	.col-lg-12

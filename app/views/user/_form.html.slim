@@ -11,54 +11,8 @@
 		= u.input :email, placeholder: "E-mail"
 	.col-lg-12
 		= u.input :password, type: 'password', placeholder: "Password"
-	.col-lg-12
-		#accordion aria-multiselectable="true" role="tablist" 
-		  .panel.white-background
-		    #headingOne.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a aria-controls="collapseOne" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" 
-		          | Arts & Entertainment
-		    #collapseOne.panel-collapse.collapse aria-labelledby="headingOne" role="tabpanel"
-		      |Yes
-		  .panel
-		    #headingTwo.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" 
-		          | Event
-		    #collapseTwo.panel-collapse.collapse aria-labelledby="headingTwo" role="tabpanel" 
-		      |World
-		  .panel
-		    #headingThree.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a.collapsed aria-controls="collapseThree" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" 
-		          | Food
-		    #collapseThree.panel-collapse.collapse aria-labelledby="headingThree" role="tabpanel" 
-		      |Hello
-		  .panel
-		    #headingFour.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a.collapsed aria-controls="collapseFour" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" 
-		          | Outdoors & Recreation
-		    #collapseFour.panel-collapse.collapse aria-labelledby="headingFour" role="tabpanel" 
-		      |Hello
-		  .panel
-		    #headingFive.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a.collapsed aria-controls="collapseFive" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" 
-		          | Professional & Other Places
-		    #collapseFive.panel-collapse.collapse aria-labelledby="headingFive" role="tabpanel" 
-		      |Hello
-		  .panel
-		    #headingSix.panel-heading role="tab" 
-		      h5.panel-title style="color: #9e9e9e !important"
-		        a.collapsed aria-controls="collapseSix" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseSix" 
-		          | Shop & Service
-		    #collapseSix.panel-collapse.collapse aria-labelledby="headingSix" role="tabpanel" 
-		      |Hello
-
-	.col-lg-3.col-lg-offset-9
-		= u.submit class: 'btn'
-			i.fa.fa-check
+	.col-lg-6.col-lg-offset-1
+		= u.submit 'Create', class: 'btn'
 		'
 		.btn.btn-danger
 			= link_to :back

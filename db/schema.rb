@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160827215931) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "dateplans", force: :cascade do |t|
     t.string  "places"
     t.string  "title"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160827215931) do
     t.integer "preference_id"
   end
 
-  add_index "interests_users", ["preference_id"], name: "index_interests_users_on_preference_id"
-  add_index "interests_users", ["user_id"], name: "index_interests_users_on_user_id"
+  add_index "interests_users", ["preference_id"], name: "index_interests_users_on_preference_id", using: :btree
+  add_index "interests_users", ["user_id"], name: "index_interests_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

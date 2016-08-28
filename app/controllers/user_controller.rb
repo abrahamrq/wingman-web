@@ -11,7 +11,7 @@ class UserController < ApplicationController
       redirect_to user_show_path
     else
       flash[:error] = 'An error occurred. Please try again.'
-      render: :new
+      render :new
     end
     redirect_to show_user_path
 	end
@@ -23,9 +23,8 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit({
-      :first_name, :last_name, :nickname, :gender, :email, :password
-      })
+    params.require(:user).permit( :first_name, :last_name, :nickname, 
+      :gender, :email, :password )
   end
 
   def login_with_new_user

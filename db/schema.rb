@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20160828084322) do
+=======
 ActiveRecord::Schema.define(version: 20160828053518) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +55,10 @@ ActiveRecord::Schema.define(version: 20160828053518) do
     t.string   "gender"
     t.string   "email"
     t.date     "birthdate"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_salt"
+    t.string   "password_hash"
   end
 
 end

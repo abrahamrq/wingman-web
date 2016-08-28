@@ -16,17 +16,7 @@ section
         .col-md-4.col-md-offset-4
           i.fa.fa-sort-desc
 
-#myModal.modal.fade role="dialog"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.btn-xs.close type="button" data-dismiss="modal"&times;
-        h1.text-center
-          |W
-      .modal-body.text-center
-        |Something
-      .modal-footer
-        = link_to 'Register', new_user_path
+= render partial: 'layouts/login_modal'
 
 section#about-section.white-background
   .container

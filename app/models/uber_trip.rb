@@ -3,26 +3,26 @@ class UberTrip
     @uber_client = uber_client
   end
 
-  def estimations(points)
+  def estimations(points, location)
     points.each_with_index do |point, index|
-      break if points.count < 2
-      next if index < 1
-
-      origin = points[index - 1]
-      destination = points[index]
+      if index < 1
+        origin = {lat: location[0], lon: location[1]}
+      else
+        origin = points[index - 1]
+      end
       res = @uber_client.price_estimations(start_latitude: origin[:lat],
                                            start_longitude: origin[:lon],
-                                           end_latitude: destination[:lat],
-                                           end_longitude: destination[:lon])
+                                           end_latitude: point[:lat],
+                                           end_longitude: point[:lon])
 
-      points[index - 1][:uber_x] = { estimate: res[0][:estimate],
-                                     distance: res[0][:distance],
-                                     duration: res[0][:duration] }
-      points[index - 1][:uber_b] = { estimate: res[3][:estimate],
-                                     distance: res[3][:distance],
-                                     duration: res[3][:duration] }
-      points
+      points[index][:uber_x] = { estimate: res[0][:estimate],
+                                 distance: res[0][:distance],
+                                 duration: res[0][:duration] }
+      points[index][:uber_b] = { estimate: res[3][:estimate],
+                                 distance: res[3][:distance],
+                                 duration: res[3][:duration] }
     end
+    points
   end
 
   private

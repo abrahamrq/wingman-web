@@ -19,6 +19,19 @@ class UserController < ApplicationController
     @user = current_user
 	end
 
+  def update
+    @user = current_user
+    interest_ids = params[:user][:interest_ids].delete_if {|id| id.blank?}
+    if @user.edit_interests(interest_ids)
+      flash[:succes] = 'You edited your interests'
+      login_with_new_user
+      redirect_to dateplan_path
+    else
+      flash[:error] = 'An error occurred. Please try again.'
+      render :show
+    end
+  end
+
   def favorites
     @user = current_user
     @favorites = Dateplan.where(user_id: current_user.id)

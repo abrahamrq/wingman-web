@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   has_many :dateplans, inverse_of: :user
   has_many :interests_users, inverse_of: :user
   has_many :interests, through: :interests_users, inverse_of: :users
-<<<<<<< HEAD
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -41,6 +40,3 @@ class User < ActiveRecord::Base
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
   end
 end
-=======
-end
->>>>>>> master

@@ -5,7 +5,7 @@ class FoursquareSuggestion
     suggestions = foursquare_search(location_string, radius, categories)
     suggestions = filter_suggestion(suggestions, limit)
     ordered_suggestions = parse_suggestions(suggestions).sort_by { |sug| sug[:distance] }
-    UberTrip.new.estimations(ordered_suggestions, location)
+    # UberTrip.new.estimations(ordered_suggestions, location)
   end
 
   private

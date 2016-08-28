@@ -1,6 +1,3 @@
-$ ->
-  window.suggestion = new Suggestion()
-
 class @Suggestion
   constructor: ->
     $('#make-suggestion').click ->
@@ -12,8 +9,5 @@ class @Suggestion
           type: 'GET'
           data: { location: algo, radius: 10000 }
           success: (response) ->
-            debugger
-            alert(response.suggestions)
           error: (response) ->
-
       )

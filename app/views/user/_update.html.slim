@@ -1,16 +1,16 @@
 = simple_form_for @user, url: create_user_path do |u|
 	.col-lg-6
-		= u.input :first_name, placeholder: "First Name"
+		= u.input :first_name, label: "First Name"
 	.col-lg-6
-		= u.input :last_name, placeholder: "Last Name"
+		= u.input :last_name, label: "Last Name"
 	.col-lg-6
-		= u.input :nickname, placeholder: "Nickname (optional)"
+		= u.input :nickname, label: "Nickname (optional)"
 	.col-lg-6
-		= u.input :gender, placeholder: "Gender (optional)"
+		= u.input :gender, label: "Gender (optional)"
 	.col-lg-6
-		= u.input :email, placeholder: "E-mail"
+		= u.input :email, label: "E-mail"
 	.col-lg-6
-		= u.input :password, type: 'password', placeholder: "Password"
+		= u.input :password, type: 'password', label: "Password"
 	.col-lg-6
 		= u.association :interests
 	.col-lg-12
@@ -21,6 +21,8 @@
 			      h5.panel-title style="color: #9e9e9e !important"
 			        a aria-controls="collapse-#{index}" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse-#{index}" 
 			          = c.name
+			          a.select-all href="#"
+			          	|	 | Select all
 			    .panel-collapse.collapse aria-labelledby="heading-#{index}" id="collapse-#{index}" role="tabpanel"
 	  				= u.association :interests, collection: Interest.all.where(category_id: c.id).map{ |i| i.description }, as: :check_boxes, label: ''
 

@@ -1,16 +1,16 @@
 = simple_form_for @user, url: create_user_path do |u|
 	.col-lg-12
-		= u.input :first_name, placeholder: "First Name" 
+		= u.input :first_name, label: "First Name" 
 	.col-lg-12
-		= u.input :last_name, placeholder: "Last Name"
+		= u.input :last_name, label: "Last Name"
 	.col-lg-12
-		= u.input :nickname, placeholder: "Nickname - if you wish"
+		= u.input :nickname, label: "Nickname (optional)"
 	.col-lg-12
-		= u.input :gender, placeholder: "Gender"
+		= u.input :gender, label: "Gender (optional)"
 	.col-lg-12
-		= u.input :email, placeholder: "E-mail"
+		= u.input :email, label: "E-mail"
 	.col-lg-12
-		= u.input :password, type: 'password', placeholder: "Password"
+		= u.input :password, type: 'password', label: "Password"
 	.col-lg-6.col-lg-offset-1
 		= u.submit 'Create', class: 'btn'
 		'

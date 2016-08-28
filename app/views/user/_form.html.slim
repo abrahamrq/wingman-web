@@ -1,0 +1,25 @@
+h1.form-title
+	|NEW USER
+h5.form-subtitle
+	|Tell us a little about you
+= simple_form_for User.new, url: create_user_path do |u|
+	.col-lg-12
+		= u.input :first_name, placeholder: "First Name" 
+	.col-lg-12
+		= u.input :last_name, placeholder: "Last Name"
+	.col-lg-12
+		= u.input :nickname, placeholder: "Nickname - if you wish"
+	.col-lg-12
+		= u.input :gender, placeholder: "Gender"
+	.col-lg-12
+		= u.input :email, placeholder: "E-mail"
+	.col-lg-12
+		= u.input :password, type: 'password', placeholder: "Password"
+	.col-lg-12
+		= u.association :interests
+	.col-lg-3.col-lg-offset-9
+		.btn.btn-success
+			i.fa.fa-check
+		'
+		.btn.btn-danger
+			i.fa.fa-close

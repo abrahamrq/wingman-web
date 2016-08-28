@@ -32,9 +32,12 @@ class FoursquareSuggestion
 
   def self.parse_suggestions(suggestions)
     suggestions.map do |v|
+      icon = v["categories"].first["icon"]
+      icon_url = "#{icon['prefix']}88#{icon['suffix']}"
       { name: v["name"], address: v["location"]["address"], lat: v["location"]["lat"],
         lon: v["location"]["lng"], distance: v["location"]["distance"],
-        categories: parse_categories(v), counts: v["stats"]["usersCount"] }
+        categories: parse_categories(v), counts: v["stats"]["usersCount"],
+        icon: icon_url}
     end
   end
 

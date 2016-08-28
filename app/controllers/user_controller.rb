@@ -19,6 +19,11 @@ class UserController < ApplicationController
     @user = current_user
 	end
 
+  def favorites
+    @user = current_user
+    @favorites = Dateplan.where(user_id: current_user.id)
+  end
+
   private
 
   def user_params

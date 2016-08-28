@@ -1,13 +1,19 @@
 .row.date-row
   - @suggestions.each_with_index do |suggestion, index|
     .col-md-2.col-md-offset-5.col-sm-4.col-sm-offset-1.col-xs-4
-      img.img-responsive.img-circle.img-dateplan.z-depth-1 src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png"
+      = image_tag suggestion[:icon], class: 'img-responsive img-circle img-dateplan z-depth-1'
     .col-md-5.col-xs-6.dateplan-text
-    	h4
-      	= suggestion[:name]
+      .row
+        .col-xs-12
+          = suggestion[:name]
+        .col-xs-5
+          = suggestion[:address] 
+        .col-xs-5
+          = "Distance: #{suggestion[:distance]}m"
     - if index < @suggestions.size - 1
       .row.date-row
         .col-md-1.col-md-offset-6.col-xs-offset-2.col-sm-offset-2.line-dateplan
+        i.fa.fa-toggle-right.white-font#click-uber.hidden style="padding: 35px 0px 0px 150px;"
 .row.text-center style="padding-top: 20px"
   .btn.btn-primary#save-suggestion places="#{@suggestions.to_json}"
     | save suggestion

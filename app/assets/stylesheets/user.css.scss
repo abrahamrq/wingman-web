@@ -1,14 +1,41 @@
 #user-form {
-	border: solid transparent 1px;
-	border-radius: 6px;
-	padding: 15px;
-	padding-left: 25px;
+  border: solid transparent 1px;
+  border-radius: 6px;
+  padding: 15px;
+  padding-left: 25px;
 
-	.form-title {
-		margin-bottom: 0;
-	}
+  .form-title {
+    margin-bottom: 0;
+  }
 
-	.form-subtitle {
-		margin-top: 0;
-	}
+  .form-subtitle {
+    margin-top: 0;
+  }
+
+  a .fa {
+    color: white;
+  }
+
+  .panel-heading h5 {
+    font-weight: bold;
+  }
+
+  .panel-collapse {
+    padding: 15px;
+  }
+}
+
+#user-content {
+  border: solid 1px transparent;
+  border-radius: 6px;
+  padding: 25px;
+
+  a .fa {
+    color: white;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
 }

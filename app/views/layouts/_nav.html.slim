@@ -12,6 +12,8 @@ nav.navbar.navbar-default
         - if current_user
           li
             = link_to 'Make Plans', dateplan_path, class: 'dark-grey-font'
+          li
+            = link_to 'Interests', show_user_path, class: 'dark-grey-font'
         li
         - if !current_user
           a.gray-font href="#" data-toggle="modal" data-target="#myModal" 

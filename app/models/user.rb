@@ -33,7 +33,24 @@ class User < ActiveRecord::Base
 
   before_create :encrypt
 
+  def edit_interests(interest_ids)
+    current_interests = self.interests.pluck(:id)
+    create_interests(interest_ids - current_interests)
+    delete_interests(current_interests - interest_ids)
+  end
+
   private
+
+  def create_interests(interest_ids)
+    interest_ids.each do |i_id|
+      InterestsUser.create(user_id: self.id, interest_id: i_id)
+    end
+  end
+
+  def delete_interests(interest_ids)
+    delete_interests_instances = interests_users.where(interest_id: interest_ids)
+    delete_interests_instances.delete_all
+  end
 
   def encrypt
     self.password_salt = BCrypt::Engine.generate_salt

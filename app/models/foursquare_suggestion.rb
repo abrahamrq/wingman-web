@@ -11,7 +11,7 @@ class FoursquareSuggestion
   private
 
   def self.set_categories(user)
-    return user.interests.pluck(:fs_key).join(',') if user
+    return user.interests.pluck(:fs_key).join(',') if user.interests.any?
     Interest.all.pluck(:fs_key).join(',')
   end
 

@@ -171,4 +171,3 @@ cat = Category.create(name: "Shop & Service", fs_key: "4d4b7105d754a06378d81259"
 Interest.create(description: "Antique Shop", fs_key: "4bf58dd8d48988d116951735", category_id: cat.id)
 Interest.create(description: "Arts & Craft Store", fs_key: "4bf58dd8d48988d127951735", category_id: cat.id)
 Interest.create(description: "Christmas Market", fs_key: "52f2ab2ebcbc57f1066b8b3b", category_id: cat.id)
-Interest.create(description: "Department Store", fs_key: "4bf58dd8d48988d1f6941735", category_id: cat.id)

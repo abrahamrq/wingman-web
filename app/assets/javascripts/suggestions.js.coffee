@@ -10,8 +10,9 @@ class @Suggestion
         $.ajax
           url: '/suggestion/foursquare'
           type: 'GET'
-          data: { location: algo }
+          data: { location: algo, radius: 10000 }
           success: (response) ->
+            debugger
             alert(response.suggestions)
           error: (response) ->
 

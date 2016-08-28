@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   
   #DatePlans routes
   get '/dateplan', to: 'dateplan#show', as: :dateplan
+
+  resources :dateplan
 end

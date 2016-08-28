@@ -23,6 +23,7 @@
 			          = c.name
 			    .panel-collapse.collapse aria-labelledby="heading-#{index}" id="collapse-#{index}" role="tabpanel"
 	  				= u.association :interests, collection: Interest.all.where(category_id: c.id).map{ |i| i.description }, as: :check_boxes, label: ''
-
+	.col-lg-12
+		= link_to 'Favorites', favorites_path, class: 'btn btn-primary'
 	.col-lg-6.col-lg-offset-6
 		= u.submit 'Update', class: 'btn btn-primary' 

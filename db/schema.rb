@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160828084322) do
+=======
+ActiveRecord::Schema.define(version: 20160828053518) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +42,10 @@ ActiveRecord::Schema.define(version: 20160828084322) do
 
   create_table "interests_users", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "preference_id"
+    t.integer "interest_id"
   end
 
-  add_index "interests_users", ["preference_id"], name: "index_interests_users_on_preference_id", using: :btree
+  add_index "interests_users", ["interest_id"], name: "index_interests_users_on_interest_id", using: :btree
   add_index "interests_users", ["user_id"], name: "index_interests_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

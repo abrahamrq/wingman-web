@@ -12,8 +12,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# FOURSQUARE GEM
-gem 'foursquare2'
+# UBER GEM
+gem 'uber-ruby', require: 'uber'
 gem 'figaro'
 
 gem 'better_errors'

@@ -17,7 +17,15 @@
     - if index < @suggestions.size - 1
       .row.date-row
         .col-md-1.col-md-offset-6.col-xs-offset-2.col-sm-offset-2.line-dateplan
-        i.fa.fa-toggle-right.white-font#click-uber.hidden style="padding: 35px 0px 0px 150px;"
+        .col-md-4
+          .row.uber-font
+            .col-md-3
+              |Uber-X
+            .col-md-6
+              = "Time: #{suggestion[:uber_x][:duration]/60} min"
+            .col-md-6
+              = "Fare-Estimate: #{suggestion[:uber_x][:estimate]}"
+
 .row.text-center style="padding-top: 20px"
   .btn.btn-primary#save-suggestion places="#{@suggestions.to_json}"
     | save suggestion

@@ -30,7 +30,7 @@
 
 .line-dateplan {
 	border-left: 1px solid white;
-	height: 100px;
+	height: 150px;
 }
 
 .date-row {
@@ -45,6 +45,13 @@
 	padding-left: 25px !important;
 	color: white;
 	font-weight: bold;
+}
+
+.uber-font {
+	padding-top: 15px !important;
+	padding-left: 20px !important;
+	font-weight: bold !important;
+	color: white;
 }
 
 #make-suggestion {

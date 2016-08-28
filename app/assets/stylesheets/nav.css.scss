@@ -2,7 +2,6 @@ nav{
   #logout-btn{
     transition: background-color .3s;
     font-size: 1rem;
-    color: #aaa;
     display: block;
     padding: 0 15px;
     cursor: pointer;
@@ -13,4 +12,7 @@ nav{
     color: #aaa;
     text-decoration: none;
   }
+
+  .orange-font{ color: #FF912E; }
+  .gray-font{ color: #777; }
 }

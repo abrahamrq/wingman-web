@@ -21,8 +21,7 @@
 @import "materialize/extras/nouislider";
 @font-face { font-family: AkaDora; src: url('fonts/akaDora.otf'); }
 @font-face { font-family: AkaDora; src: url('fonts/akaDora.ttf'); } 
-@font-face { font-family: Alisandra; src: url('fonts/alisandra.ttf'); } 
-
+@font-face { font-family: Alisandra; src: url('fonts/alisandra.ttf'); }
 
 body {
     overflow-x: hidden;
@@ -38,6 +37,8 @@ header {
     text-align: center;
     color: #fff;
 }
+
+h2, h3, h4, h5 { font-family: "alisandra"; }
 
 .orange-background { background-color: #FF912E; }
 .orange-font { color: #FF912E; }

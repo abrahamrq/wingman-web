@@ -12,9 +12,8 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav.navbar-right
         li
         - if !current_user
-          a href="#" data-toggle="modal" data-target="#myModal" 
+          a.gray-font href="#" data-toggle="modal" data-target="#myModal" 
             | Login
         - if current_user
-          = link_to destroy_session_path, id:'logout-btn'
-            | Logout 
-              
+          = link_to destroy_session_path, id:'logout-btn', class: 'orange-font'
+            | Logout

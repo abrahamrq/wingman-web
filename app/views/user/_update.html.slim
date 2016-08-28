@@ -1,12 +1,12 @@
 = simple_form_for @user, url: create_user_path do |u|
 	.col-lg-6
-		= u.input :first_name, placeholder: "First Name" 
+		= u.input :first_name, placeholder: "First Name"
 	.col-lg-6
 		= u.input :last_name, placeholder: "Last Name"
 	.col-lg-6
-		= u.input :nickname, placeholder: "Nickname - if you wish"
+		= u.input :nickname, placeholder: "Nickname (optional)"
 	.col-lg-6
-		= u.input :gender, placeholder: "Gender"
+		= u.input :gender, placeholder: "Gender (optional)"
 	.col-lg-6
 		= u.input :email, placeholder: "E-mail"
 	.col-lg-6
@@ -25,4 +25,4 @@
 	  				= u.association :interests, collection: Interest.all.where(category_id: c.id).map{ |i| i.description }, as: :check_boxes, label: ''
 
 	.col-lg-6.col-lg-offset-6
-		= u.submit 'Update', class: 'btn' 
+		= u.submit 'Update', class: 'btn btn-primary' 

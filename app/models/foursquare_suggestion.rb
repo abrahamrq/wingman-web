@@ -3,7 +3,7 @@ class FoursquareSuggestion
     categories = set_categories(user)
     suggestions = foursquare_search(location, radius, categories)
     suggestions = filter_suggestion(suggestions, limit)
-    parse_suggestions(suggestions)
+    parse_suggestions(suggestions).sort_by { |sug| sug[:distance] }
   end
 
   private
@@ -14,9 +14,18 @@ class FoursquareSuggestion
   end
 
   def self.filter_suggestion(suggestions, limit)
-    suggestions.delete_if do |suggestion|
-      suggestion["stats"]["usersCount"] < 15
-    end.sample(limit)
+    categories = ["Department Store"]
+    filtered_suggestions = []
+    suggestions.shuffle.each do |suggestion|
+      category = parse_categories(suggestion)
+      if suggestion["stats"]["usersCount"] < 15 || categories.include?(category)
+        next
+      end
+      categories << category
+      filtered_suggestions << suggestion
+      break if filtered_suggestions.size >= limit
+    end
+    filtered_suggestions
   end
 
   def self.parse_suggestions(suggestions)
